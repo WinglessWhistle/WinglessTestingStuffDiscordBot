@@ -39,6 +39,12 @@ client.on('message', msg => {
   }
 });
 
+client.on('message', message => {
+  if (message.content === '!avatar') {
+    message.reply(message.author.displayAvatarURL());
+  }
+});
+
 
 // Bot Token
 
