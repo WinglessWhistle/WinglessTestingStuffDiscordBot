@@ -28,9 +28,8 @@ client.on('message', msg => {
 });
 
 client.on('message', msg => {
-  if (msg.content === '!dmtest') {
-    message.author.send("test"),
-    msg.reply('DM Sent?');
+  if (msg.content === '!invite') {
+    msg.reply('Soon™');
   }
 });
 
