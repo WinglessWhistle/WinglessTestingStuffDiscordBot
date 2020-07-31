@@ -33,6 +33,12 @@ client.on('message', msg => {
   }
 });
 
+client.on('message', msg => {
+  if (msg.content === '!winglessentials') {
+    msg.reply('Winglessentials is a minecraft plugin recoded and aimed to replace the popular plugin Essentials and EssentialsX. Learn more about it by visiting the GitHub repo - https://github.com/WinglessWhistle/Winglessentials');
+  }
+});
+
 
 // Bot Token
 
