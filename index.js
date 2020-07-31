@@ -29,7 +29,7 @@ client.on('message', msg => {
 
 client.on('message', msg => {
   if (msg.content === '!invite') {
-    message.channel.send('Soon™');
+    msg.reply('Soon™');
   }
 });
 
