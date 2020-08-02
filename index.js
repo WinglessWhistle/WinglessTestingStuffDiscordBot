@@ -19,6 +19,8 @@ client.on("ready", () => {
     })
 })
 
+
+
 // Bot Commands
 
 // !ping
@@ -28,13 +30,19 @@ client.on('message', msg => {
   }
 });
 
+// hello
+client.on('message', msg => {
+  if (msg.content === 'hello') {
+    msg.reply('Hi!');
+  }
+});
+
 // !invite
 client.on('message', msg => {
   if (msg.content === '!invite') {
     msg.reply('Soon™');
   }
 });
-
 
 // !winglessentials
 client.on('message', msg => {
@@ -56,6 +64,14 @@ client.on('guildMemberAdd', member => {
   if (!channel) return;
   channel.send(`Welcome to the server, ${member}`);
 });
+
+// !commands
+client.on('message', msg => {
+  if (msg.content === '!commands') {
+    msg.reply('!ping, !invite, !winglessentials, !avatar & !commands');
+  }
+});
+
 
 // Bot Token
 
