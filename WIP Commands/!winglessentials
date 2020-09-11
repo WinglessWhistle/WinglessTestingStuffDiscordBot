@@ -1,0 +1,6 @@
+// !winglessentials
+client.on('message', msg => {
+  if (msg.content === '!winglessentials') {
+    msg.channel.send('Winglessentials is a minecraft plugin recoded and aimed to replace the popular plugin Essentials and EssentialsX. Learn more about it by visiting the GitHub repo - https://github.com/WinglessWhistle/Winglessentials');
+  }
+});

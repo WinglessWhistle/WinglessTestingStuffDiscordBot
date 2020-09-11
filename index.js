@@ -10,68 +10,31 @@ app.listen(port, () => console.log(`Example app listening at http://localhost:${
 const Discord = require('discord.js');
 const client = new Discord.Client();
 client.on("ready", () => {
-    client.user.setPresence({
-        game: { 
-            name: 'my code',
-            type: 'playing'
-        },
-        status: 'dnd'
-    })
-})
-
-
 
 // Bot Commands
 
 // !ping
-client.on('message', msg => {
-  if (msg.content === '!ping') {
-    msg.reply('pong!');
-  }
-});
-
-// hello
-client.on('message', msg => {
-  if (msg.content === 'hello') {
-    msg.reply('Hi!');
+client.on('message', message => {
+  if (message.content === '!ping') {  
+    message.channel.send(`Your latency is ${Date.now() - message.createdTimestamp}ms. APIs Latency is ${Math.round(client.ws.ping)}ms`);
   }
 });
 
 // !invite
 client.on('message', msg => {
   if (msg.content === '!invite') {
-    msg.reply('Soon™');
-  }
-});
-
-// !winglessentials
-client.on('message', msg => {
-  if (msg.content === '!winglessentials') {
-    msg.reply('Winglessentials is a minecraft plugin recoded and aimed to replace the popular plugin Essentials and EssentialsX. Learn more about it by visiting the GitHub repo - https://github.com/WinglessWhistle/Winglessentials');
+    msg.reply('Invite link sent to you in dms!');
+    msg.author.sent('Invite WingBot using this link - http://bit.ly/WingBotInvite')
   }
 });
 
 // !avatar
-client.on('message', message => {
-  if (message.content === '!avatar') {
-    message.reply(message.author.displayAvatarURL());
-  }
-});
-
-// new join
-client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.cache.find(ch => ch.name === 'general');
-  if (!channel) return;
-  channel.send(`Welcome to the server, ${member}`);
-});
-
-// !commands
 client.on('message', msg => {
-  if (msg.content === '!commands') {
-    msg.reply('!ping, !invite, !winglessentials, !avatar & !commands');
+  if (msg.content === '!avatar') {
+    msg.reply('Here is your avatar!');
+    msg.channel.send(msg.author.displayAvatarURL());
   }
 });
-
 
 // Bot Token
 
