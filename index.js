@@ -2,15 +2,16 @@ const express = require('express');
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => res.send('Literally just here to fill in the empty page from hosting WTSBot'));
+app.get('/', (req, res) => res.send('WingBot Online!'));
 
-app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
+app.listen(port, () => console.log(`WingBot live on - http://localhost:${port}`));
 
 // ================= START BOT CODE ===================
 const Discord = require('discord.js');
 const client = new Discord.Client();
 client.on("ready", () => {
 
+});
 // Bot Commands
 
 // !ping
