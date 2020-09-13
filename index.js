@@ -11,7 +11,17 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 client.on("ready", () => {
 
-});
+client.user.setPresence({
+    status: 'online',
+    activity: {
+        name: 'I am WingBot!',
+        type: 'STREAMING',
+        url: 'https://www.twitch.tv/WinglessWhistle'
+    }
+})
+
+})
+
 // Bot Commands
 
 // !ping
