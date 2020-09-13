@@ -28,6 +28,7 @@ client.user.setPresence({
 client.on('message', message => {
   if (message.content === '!ping') {  
     message.channel.send(`Your latency is ${Date.now() - message.createdTimestamp}ms. APIs Latency is ${Math.round(client.ws.ping)}ms`);
+    message.react('🏓');
   }
 });
 
