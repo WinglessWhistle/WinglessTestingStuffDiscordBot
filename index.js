@@ -43,11 +43,23 @@ client.on('message', msg => {
 // !avatar
 client.on('message', msg => {
   if (msg.content === '!avatar') {
+    msg.react('📷');  
     msg.reply('Here is your avatar!');
     msg.channel.send(msg.author.displayAvatarURL());
   }
 });
 
+// !true
+client.on('message', msg => {
+  if (msg.content === '!true') {
+    msg.reply('test');
+    msg.delete({ timeout: 100 });
+    msg.react('🇹');
+    msg.react('🇷');
+    msg.react('🇺');
+    msg.react('🇪');
+  }
+});
 
 
 // Bot Token
