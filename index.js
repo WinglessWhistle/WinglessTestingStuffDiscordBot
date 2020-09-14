@@ -36,7 +36,7 @@ client.on('message', message => {
 client.on('message', msg => {
   if (msg.content === '!invite') {
     msg.reply('Invite link sent to you in dms!');
-    msg.author.sent('Invite WingBot using this link - http://bit.ly/WingBotInvite')
+    msg.author.send('Invite WingBot using this link - http://bit.ly/WingBotInvite')
   }
 });
 
